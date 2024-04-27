@@ -43,11 +43,10 @@ const Carousel = () => {
         left: elemRef?.current.offsetLeft - 50,
         behavior: "smooth",
       });
-
-      setcurrentImageIndex(nextIndex);
     } catch (err) {
       console.log("The Error says: ", err);
     }
+    setcurrentImageIndex(nextIndex);
   }
 
   //Scroll images to right
@@ -61,11 +60,10 @@ const Carousel = () => {
         left: elemRef?.current.offsetLeft - 50,
         behavior: "smooth",
       });
-
-      setcurrentImageIndex(nextIndex);
     } catch (err) {
       console.log("The Error says: ", err.message);
     }
+    setcurrentImageIndex(nextIndex);
   }
 
   return (
