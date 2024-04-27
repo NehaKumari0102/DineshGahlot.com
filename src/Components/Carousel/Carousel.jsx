@@ -40,7 +40,7 @@ const Carousel = () => {
 
     try {
       block.scrollTo({
-        left: elemRef?.current.offsetLeft - 50,
+        left: elemRef?.current.offsetLeft - 20,
         behavior: "smooth",
       });
     } catch (err) {
@@ -51,13 +51,13 @@ const Carousel = () => {
 
   //Scroll images to right
   function scrollPlus(elemRef, nextIndex) {
-    if (currentImageIndex >= images.length || elemRef == undefined) {
+    if (currentImageIndex >= images.length -1 || elemRef == undefined) {
       return; // Already at the last image
     }
 
     try {
       block.scrollTo({
-        left: elemRef?.current.offsetLeft - 50,
+        left: elemRef?.current.offsetLeft - 20,
         behavior: "smooth",
       });
     } catch (err) {
@@ -74,7 +74,7 @@ const Carousel = () => {
       <div
         className={
           className +
-          "__images h-100 px-6 d-flex flex-row gap-7 overflow-scroll Carousel__images"
+          "__images h-100 px-6 d-flex flex-row gap-7 overflow-hidden Carousel__images"
         }
       >
         <img
