@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #fff;
+  --dark-text: #000;
+  --source-sans: "Source Sans 3", sans-serif;
+  --lora: "Lora", serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

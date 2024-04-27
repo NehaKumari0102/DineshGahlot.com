@@ -1,0 +1,34 @@
+.NavBar {
+  transition: all 0.5s ease;
+  a {
+    h1 {
+      color: var(--text-color);
+      font-family: var(--lora);
+    }
+  }
+  &__navButtons {
+    a {
+      color: var(--text-color);
+      font-family: var(--source-sans);
+    }
+  }
+  &__hamburger > * {
+    color: var(--text-color);
+  }
+}
+
+.NavBar.scrolled {
+  a {
+    h1 {
+      color: var(--dark-text);
+    }
+  }
+  .NavBar__navButtons {
+    a {
+      color: var(--dark-text);
+    }
+  }
+  .NavBar__hamburger > * {
+    color: var(--dark-text);
+  }
+}

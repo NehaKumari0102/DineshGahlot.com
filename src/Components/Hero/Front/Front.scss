@@ -1,0 +1,11 @@
+.HeroSection__Front {
+  &__tagline {
+    color: var(--text-color);
+    font-family: var(--lora);
+  }
+
+  &__moreText {
+    color: var(--text-color);
+    font-family: var(--source-sans);
+  }
+}
