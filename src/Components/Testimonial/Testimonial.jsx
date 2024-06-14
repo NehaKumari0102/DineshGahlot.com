@@ -35,24 +35,24 @@ const Testimonial = forwardRef((props, ref) => {
       <section className={className + "__leftSide sm:w-[50%] w-100 h-100"}>
         <div
           id="carouselExampleFade"
-          class="h-100 carousel slide carousel-fade"
+          className="h-100 carousel slide carousel-fade"
         >
-          <div class="carousel-inner h-100">
-            <div class="carousel-item md:h-100 sm:h-[50vh] h-[35vh] active">
+          <div className="carousel-inner h-100">
+            <div className="carousel-item md:h-100 sm:h-[50vh] h-[35vh] active">
               <img
                 src={image1}
                 alt="Testimonial"
                 className="d-block w-100 h-100 object-fit-cover"
               />
             </div>
-            <div class="carousel-item md:h-100 sm:h-[50vh] h-[35vh]">
+            <div className="carousel-item md:h-100 sm:h-[50vh] h-[35vh]">
               <img
                 src={image6}
                 alt="Testimonial"
                 className="d-block w-100 h-100 object-fit-cover"
               />
             </div>
-            <div class="carousel-item md:h-100 sm:h-[50vh] h-[35vh]">
+            <div className="carousel-item md:h-100 sm:h-[50vh] h-[35vh]">
               <img
                 src={image2}
                 alt="Testimonial"
@@ -61,22 +61,22 @@ const Testimonial = forwardRef((props, ref) => {
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleFade"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleFade"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </section>

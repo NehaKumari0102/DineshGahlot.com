@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
@@ -22,14 +22,13 @@ const Carousel = () => {
   const image4Ref = useRef(null);
   const image5Ref = useRef(null); // To get reference of each image
 
-  const images = [image0, image1, image2, image3, image4, image5];
-  const imageRefs = [
-    image0Ref,
-    image1Ref,
-    image2Ref,
-    image3Ref,
-    image4Ref,
-    image5Ref,
+  const images = [
+    { src: image0, ref: image0Ref },
+    { src: image1, ref: image1Ref },
+    { src: image2, ref: image2Ref },
+    { src: image3, ref: image3Ref },
+    { src: image4, ref: image4Ref },
+    { src: image5, ref: image5Ref },
   ];
 
   //Scroll the images to left
@@ -51,9 +50,10 @@ const Carousel = () => {
 
   //Scroll images to right
   function scrollPlus(elemRef, nextIndex) {
-    if (currentImageIndex >= images.length -1 || elemRef == undefined) {
+    if (currentImageIndex >= images.length - 1 || elemRef == undefined) {
       return; // Already at the last image
     }
+    console.log(elemRef, nextIndex);
 
     try {
       block.scrollTo({
@@ -77,42 +77,14 @@ const Carousel = () => {
           "__images h-100 px-6 d-flex flex-row gap-7 overflow-hidden Carousel__images"
         }
       >
-        <img
-          src={images[0]}
-          alt="image0"
-          className="h-100 w-100 pe-none object-fit-cover"
-          ref={image0Ref}
-        />
-        <img
-          src={images[1]}
-          alt="image1"
-          className="h-100 w-100 pe-none object-fit-cover"
-          ref={image1Ref}
-        />
-        <img
-          src={images[2]}
-          alt="image2"
-          className="h-100 w-100 pe-none object-fit-cover"
-          ref={image2Ref}
-        />
-        <img
-          src={images[3]}
-          alt="image3"
-          className="h-100 w-100 pe-none object-fit-cover"
-          ref={image3Ref}
-        />
-        <img
-          src={images[4]}
-          alt="image4"
-          className="h-100 w-100 pe-none object-fit-cover"
-          ref={image4Ref}
-        />
-        <img
-          src={images[5]}
-          alt="image5"
-          className="h-100 w-100 pe-none object-fit-cover"
-          ref={image5Ref}
-        />
+        {images.map((image) => (
+          <img
+            src={image.src}
+            alt="image0"
+            className="h-100 w-100 pe-none object-fit-cover"
+            ref={image.ref}
+          />
+        ))}
       </div>
 
       {/**The Image slide controller */}
@@ -125,7 +97,10 @@ const Carousel = () => {
         <FaArrowLeft
           className="md:text-2xl text-lg cursor-pointer"
           onClick={() =>
-            scrollMinus(imageRefs[currentImageIndex - 1], currentImageIndex - 1)
+            scrollMinus(
+              images[currentImageIndex - 1].ref,
+              currentImageIndex - 1
+            )
           }
         />
 
@@ -134,7 +109,7 @@ const Carousel = () => {
         <FaArrowRight
           className="md:text-2xl text-lg cursor-pointer"
           onClick={() =>
-            scrollPlus(imageRefs[currentImageIndex + 1], currentImageIndex + 1)
+            scrollPlus(images[currentImageIndex + 1].ref, currentImageIndex + 1)
           }
         />
       </div>
