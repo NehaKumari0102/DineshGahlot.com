@@ -99,7 +99,7 @@ const Carousel = () => {
           className="md:text-2xl text-lg cursor-pointer"
           onClick={() =>
             scrollMinus(
-              images[currentImageIndex - 1].ref,
+              images[currentImageIndex !== 0 ? currentImageIndex - 1 : 0].ref,
               currentImageIndex - 1
             )
           }
@@ -110,7 +110,14 @@ const Carousel = () => {
         <FaArrowRight
           className="md:text-2xl text-lg cursor-pointer"
           onClick={() =>
-            scrollPlus(images[currentImageIndex + 1].ref, currentImageIndex + 1)
+            scrollPlus(
+              images[
+                currentImageIndex < images.length - 1
+                  ? currentImageIndex + 1
+                  : 5
+              ].ref,
+              currentImageIndex + 1
+            )
           }
         />
       </div>
