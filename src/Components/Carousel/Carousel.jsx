@@ -53,9 +53,9 @@ const Carousel = () => {
     if (currentImageIndex >= images.length - 1 || elemRef == undefined) {
       return; // Already at the last image
     }
-    console.log(elemRef, nextIndex);
 
     try {
+      console.log(elemRef, nextIndex);
       block.scrollTo({
         left: elemRef?.current.offsetLeft - 20,
         behavior: "smooth",
@@ -77,10 +77,11 @@ const Carousel = () => {
           "__images h-100 px-6 d-flex flex-row gap-7 overflow-hidden Carousel__images"
         }
       >
-        {images.map((image) => (
+        {images.map((image, index) => (
           <img
+            key={index}
             src={image.src}
-            alt="image0"
+            alt={`image${index}`}
             className="h-100 w-100 pe-none object-fit-cover"
             ref={image.ref}
           />
