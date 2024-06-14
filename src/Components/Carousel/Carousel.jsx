@@ -55,7 +55,6 @@ const Carousel = () => {
     }
 
     try {
-      console.log(elemRef, nextIndex);
       block.scrollTo({
         left: elemRef?.current.offsetLeft - 20,
         behavior: "smooth",
